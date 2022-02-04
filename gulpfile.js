@@ -134,9 +134,10 @@ const watching =() =>{
     watch('./src/scss/**/*.scss', stylesMin);
     watch('./src/js/**/*.js', scripts);
     watch('./src/fonts/**.ttf', fonts);
-    watch('./src/images/**.jpg', images);
-    watch('./src/images/**.png', images);
-    watch('./src/images/**.jpeg', images);
+    watch('./src/images/**/*.svg', imageSVG);
+    watch('./src/images/**/*.jpg', images);
+    watch('./src/images/**/*.png', images);
+    watch('./src/images/**/*.jpeg', images);
 }
 
 exports.default = series(clean, parallel(htmlBuild, scripts, fonts, images, imageSVG), stylesMin, watching);
